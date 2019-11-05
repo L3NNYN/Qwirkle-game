@@ -1,6 +1,8 @@
 #ifndef NODO_H
 #define NODO_H
+#include <sstream>
 #include "Pieza.h"
+#include "Boton.h"
 
 class Nodo
 {	
@@ -9,6 +11,7 @@ class Nodo
 		Nodo *sig;
 	public:
 		Nodo(Pieza *, Nodo *);
+//		Nodo ()
 		~Nodo();
 		void setDato(Pieza *);
 		Pieza * getDato();

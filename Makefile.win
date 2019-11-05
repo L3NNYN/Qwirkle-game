@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o Nodo.o Pieza.o Manejo.o
-LINKOBJ  = main.o Nodo.o Pieza.o Manejo.o
+OBJ      = main.o Pieza.o Boton.o Jugador.o Partida.o Manejo.o Nodo.o
+LINKOBJ  = main.o Pieza.o Boton.o Jugador.o Partida.o Manejo.o Nodo.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -luser32 -m32
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -27,11 +27,20 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-Nodo.o: Nodo.cpp
-	$(CPP) -c Nodo.cpp -o Nodo.o $(CXXFLAGS)
-
 Pieza.o: Pieza.cpp
 	$(CPP) -c Pieza.cpp -o Pieza.o $(CXXFLAGS)
 
+Boton.o: Boton.cpp
+	$(CPP) -c Boton.cpp -o Boton.o $(CXXFLAGS)
+
+Jugador.o: Jugador.cpp
+	$(CPP) -c Jugador.cpp -o Jugador.o $(CXXFLAGS)
+
+Partida.o: Partida.cpp
+	$(CPP) -c Partida.cpp -o Partida.o $(CXXFLAGS)
+
 Manejo.o: Manejo.cpp
 	$(CPP) -c Manejo.cpp -o Manejo.o $(CXXFLAGS)
+
+Nodo.o: Nodo.cpp
+	$(CPP) -c Nodo.cpp -o Nodo.o $(CXXFLAGS)
