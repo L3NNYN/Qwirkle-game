@@ -17,6 +17,7 @@ class Pieza
 		int getFigura();
 		void setColor();
 		string getColor();	
+		int getAux();
 		void DibujarPieza(int, int); //Dibuja la pieza.
 		void Cuadrado(int, int); 
 		void Circulo(int, int);

@@ -61,9 +61,13 @@ string Pieza::getColor(){
 	return color;
 }
 
+int Pieza::getAux(){
+	return auxColor;
+}
+
 void Pieza::DibujarPieza(int x, int y){
-	setcolor(auxColor);
-	setfillstyle(1, auxColor);
+//	setcolor(auxColor);
+//	setfillstyle(1, auxColor);
 	if(idFigura == 1){
 		Cuadrado(x, y);
 	} else {
@@ -87,7 +91,7 @@ void Pieza::DibujarPieza(int x, int y){
 			}
 		}
 	}
-	setfillstyle(9, 15);
+//	setfillstyle(9, 15);
 }
 
 void Pieza::Cuadrado(int x, int y){

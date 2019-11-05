@@ -9,7 +9,8 @@
 #include "Nodo.h"
 #include "Jugador.h"
 #include "Boton.h"
-
+#define FIL 9
+#define COL 11
 //Para eliminar nodos use de referencia este video: https://youtu.be/ljYbVM6j11s
 
 using namespace std;
@@ -19,13 +20,14 @@ class Partida
 	private:
 		int cantPiezas;
 		Jugador Comp, Player1;
-		Boton * Tablero[9][11];
+		Boton * Tablero[FIL][COL];
 		Nodo * primero;
 		Nodo * actual;
 		Nodo * casilla;
 	public:
 		Partida();
-		void PintarTablero();
+		void llenarTablero();
+		void pintarTablero();
 		void PiezasTablero();
 		void AgregarPieza(Pieza *, int, int);
 		

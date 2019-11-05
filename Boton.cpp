@@ -23,8 +23,38 @@ void Boton::setCoord(int x1, int y1, int x2, int y2){
 	this->y2 = y2;
 }
 
+int Boton::getX1(){
+	return x1;
+}
+
+int Boton::getX2(){
+	return x2;
+}
+
+int Boton::getY1(){
+	return y1;
+}
+
+int Boton::getY2(){
+	return y2;
+}
+
 void Boton::setFicha(Pieza * ficha){
 	this->ficha = ficha;
+}
+
+void Boton::DibujarTablero(){
+	if (ficha == NULL){
+		setfillstyle(9, 15);
+		setcolor(0);
+		bar3d(x1, y1, x2, y2, 0, 0);
+	} else {
+		int auxColor = 0;
+		auxColor = ficha->getAux();
+		setcolor(auxColor);
+		setfillstyle(1, auxColor);
+		DibujarFicha();
+	}
 }
 
 void Boton::DibujarFicha(){

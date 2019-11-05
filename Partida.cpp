@@ -1,28 +1,25 @@
 #include "Partida.h"
 
-Partida::Partida(){	
+Partida::Partida(){
 	cantPiezas = 0;
 	primero = actual = casilla = NULL;
 	
-	for(int a = 0; a <= 9; a++){
-		for(int b = 0; b <= 11; b++){
-			Tablero[a][b] = NULL;
+	for(int a = 0; a < FIL; a++){
+		for(int b = 0; b < COL; b++){
+			Tablero[a][b] = new Boton();
 		}
 	}
-	
 	//Lo inicio acá porque en el método me genera que los dos jugadores tengan el mismo deck.
 	srand(time(NULL));
 }
 
-void Partida::PintarTablero(){
+void Partida::llenarTablero(){
 	int left = 50; 
 	int top = 100;
 	int right = 100;
 	int bottom = 150;	
-	setfillstyle(9, 15);
-	for(int i = 0; i <= 9; i++){
-		for(int j = 0; j <= 11; j++){
-			bar3d(left, top, right, bottom, 0, 0);
+	for(int i = 0; i < FIL; i++){
+		for(int j = 0; j < COL; j++){
 			Tablero[i][j] = new Boton(NULL, left, top, right, bottom);
 			left += 50;
 			right += 50;
@@ -32,37 +29,39 @@ void Partida::PintarTablero(){
 		right = 100;
 		bottom += 50;		
 	}
+
+}
+
+void Partida::pintarTablero(){
+//	Pieza * ficha;
+//	ficha = new Pieza(2, 4);
+//	AgregarPieza(ficha, 8, 7);
+
+	for(int i = 0; i < FIL; i++){
+		for(int j = 0; j < COL; j++){
+			Tablero[i][j]->DibujarTablero();
+		}
+	}
+	
 }
 
 void Partida::PiezasTablero(){
-//	Pieza * asd = ficha;
-//	Tablero[0][0] = new Boton(ficha, 0, 0, 0, 0);
-//	Tablero[0][0]->setCoord(100, 100, 150, 150);
-//	Tablero[0][0]->setFicha(ficha);
-//	Tablero[0][0]->imprimirFicha();
-
-//	Pieza * as = ficha;
-//	as = new Pieza(2, 4);
-//	Tablero[0][0]->setFicha(as);
-//	Tablero[8][7]->setFicha(as);
-
-
-//for(int i = 0; i <= 9; i++){
-//		for(int j = 0; j <= 11; j++){
-//			if(Tablero[i][j]->getFicha() != NULL){
-//				Tablero[i][j]->DibujarFicha();
-//			}
-//		}
-//	}
+for(int i = 0; i < FIL; i++){
+		for(int j = 0; j < COL; j++){
+			if(Tablero[i][j]->getFicha() != NULL){
+				Tablero[i][j]->DibujarFicha();
+			}
+		}
+	}
 
 }
 
 void Partida::AgregarPieza(Pieza * ficha, int i, int j){
-	if(Tablero[i][j]->getFicha() == NULL){
+//	if(Tablero[i][j]->getFicha() == NULL){
 		Tablero[i][j]->setFicha(ficha);
-	} else {
+//	} else {
 //		return;
-	}
+//	}
 }
 
 void Partida::LlenarBolsa(){
@@ -81,15 +80,7 @@ void Partida::LlenarBolsa(){
 void Partida::iniciarPartida(){
 //	Repartir(Comp);
 //	Repartir(Player1);
-//Tablero[0][0]->DibujarFicha();
-
-//	for(int i = 0; i <= 9; i++){
-//		for(int j = 0; j <= 11; j++){
-//			if(Tablero[8][7]->getFicha() != NULL){
-//				Tablero[8][7]->DibujarFicha();
-//			}
-//		}
-//	}
+Tablero[8][7]->DibujarFicha();
 }
 
 void Partida::Bolsa(Pieza * ficha){

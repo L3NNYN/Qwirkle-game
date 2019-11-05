@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+#include <graphics.h>
 #include "Pieza.h"
 
 using namespace std;
@@ -18,7 +19,12 @@ class Boton
 		Boton();
 		Boton(Pieza *, int, int, int, int);
 		void setCoord(int, int, int, int);
+		int getX1();
+		int getX2();
+		int getY1();
+		int getY2();
 		void setFicha(Pieza *);
+		void DibujarTablero();
 		Pieza * getFicha();
 		void DibujarFicha();
 		void imprimirFicha();

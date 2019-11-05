@@ -19,11 +19,14 @@ int main(){
 	initwindow(900, 700);
 ////	setcolor(0);
 	Partida prueba;
-	prueba.PintarTablero();
+	prueba.llenarTablero();
 	Pieza * ficha;
-	ficha = new Pieza(2, 4);
-	prueba.AgregarPieza(ficha, 4, 5);
-	prueba.PiezasTablero();
+	ficha = new Pieza(2, 4);	
+	prueba.AgregarPieza(ficha, 8, 7);
+	
+//	prueba.PiezasTablero();
+	
+	prueba.pintarTablero();
 //	prueba.iniciarPartida();
 	
 //	prueba.PintarTablero();
