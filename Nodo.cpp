@@ -1,5 +1,7 @@
 #include "Nodo.h"
 
+//Esto se le debe hacer bastante conocido entonces no creo que sea necesario explicarlo.
+
 Nodo::Nodo(Pieza * qwirkle, Nodo *sig){
 	this->qwirkle = qwirkle;
 	this->sig  = sig;

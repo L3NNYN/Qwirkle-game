@@ -2,7 +2,9 @@
 #define NODO_H
 #include <sstream>
 #include "Pieza.h"
-#include "Boton.h"
+
+//Lista simplemente enlazada.
+//Creo que esto se puede obviar ya que es igual a su ejemplo subido al aula virtual.
 
 class Nodo
 {	
